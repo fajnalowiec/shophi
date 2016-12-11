@@ -1,14 +1,25 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "mojafirma/shophi",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "ShopHi - the best e-commerce solution :)",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "Artur Dzida",
+            "email": "artur.dzida@gmail.com"
+        }
+    ],
     "autoload": {
-        "psr-4": { "": "src/" },
-        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": ["app/AppKernel.php", "app/AppCache.php"]
     },
     "autoload-dev": {
-        "psr-4": { "Tests\\": "tests/" }
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "require": {
         "php": ">=5.5.9",

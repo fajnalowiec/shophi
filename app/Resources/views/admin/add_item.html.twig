@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Add new item
+    {{ form_start(form) }}
+
+    {{ form_label(form.name) }}
+    {{ form_widget(form.name) }}
+    <br/>
+    {{ form_label(form.price) }}
+    {{ form_widget(form.price) }}
+    <br/>
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description) }}
+    <br/>
+    {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}

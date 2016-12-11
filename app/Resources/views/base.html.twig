@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}ShopHi!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    {% block header %}
+        Shophi - just a header
+        <br/>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            Logged as: {{ app.user.username }}
+        {% endif %}
+        <hr/>
+
+        {# show flash messages and errors - start #}
+        {% if app.session.flashBag.has('message') %}
+            <div style="color:green">
+                {% for msg in app.session.flashBag.get('message') %}
+                    {{ msg }}
+                    <br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if app.session.flashBag.has('error') %}
+            <div style="color:red">
+                {% for msg in app.session.flashBag.get('error') %}
+                    {{ msg }}
+                    <br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {# show flash messages and errors - stop
+        #}
+    {% endblock %}
+{% block body %}{% endblock %}
+{% block footer %}
+    <hr/>
+    ShopHi - just a footer
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

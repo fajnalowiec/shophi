@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    This is just an admin site
+    <br/>
+    <a href="{{ path('main') }}">Main site</a>
+    <br/>
+    <a href="{{ path('admin_add_item') }}">Add new item</a>
+    <br/>
+    <p>Request method: {{ app.request.getBaseUrl }}</p>
+{% endblock %}
